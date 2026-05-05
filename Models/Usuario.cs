@@ -1,0 +1,31 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
+using System.Threading.Tasks;
+using RpgApi.Models;
+
+namespace A09.Models
+{
+    public class Usuario
+    {
+        public int Id { get; set; } // Atalho para propriedade (PROP + TAB)
+        public string Username { get; set; }  = string.Empty;
+        public byte[]? PassworsHash { get; set; }   
+        public byte[]? PasswordSalt { get; set; } 
+        public byte[]? Foto { get; set; } 
+        public double? Latitude { get; set; }  
+        public double? Longitude { get; set; }  
+        public DateTime? DataAcesso { get; set; } // using System;
+
+        [NotMapped] //using System.ComponetModel.DataAnnotations.Schema
+        public string PassowordString { get; set; } = string.Empty;
+        public List<Personagem> Personagens { get; set; } = new List<Personagem>();//using System.Collections.Generic;
+        public string? Perfil { get; set; }
+        public string? Email { get; set; } = string.Empty;
+
+        [NotMapped]
+        public string Token { get; set; } = string.Empty;
+        
+    }
+}
