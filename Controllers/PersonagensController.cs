@@ -36,7 +36,7 @@ namespace RpgApi.Controller
             }
         }
 
-      
+
         [HttpGet("GetAll")]
         public async Task<IActionResult> Get()
         {
@@ -51,7 +51,7 @@ namespace RpgApi.Controller
             }
         }
 
-    
+
         [HttpPost]
         public async Task<IActionResult> Add(Personagem novoPersonagem)
         {
@@ -73,7 +73,7 @@ namespace RpgApi.Controller
             }
         }
 
-     
+
         [HttpPut]
         public async Task<IActionResult> Update(Personagem novoPersonagem)
         {
@@ -96,7 +96,7 @@ namespace RpgApi.Controller
             }
         }
 
- 
+
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
