@@ -22,7 +22,8 @@ namespace RpgApi.Data
         public DbSet<Personagem> TB_PERSONAGENS { get; set; }
         public DbSet<Arma> TB_ARMAS { get; set; }
         public DbSet<Usuario> TB_USUARIO { get; set; }
-        public DbSet<PersonagemHabilidade> TB_HABILIDADES { get; set; }
+        public DbSet<Habilidade> TB_HABILIDADES { get; set; }
+        public DbSet<PersonagemHabilidade> TB_PERSONAGENS_HABILIDADES { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -67,9 +68,10 @@ namespace RpgApi.Data
             );
 
             modelBuilder.Entity<PersonagemHabilidade>()
-                .HasKey(ph => new { ph.PersonagemId, ph.HabilidadeId });
+                .HasKey(ph => new {ph.PersonagemId, ph.HabilidadeId });
 
-            modelBuilder.Entity<Habilidade>().HasData(
+            modelBuilder.Entity<Habilidade>().HasData
+            (
                 new Habilidade() { Id = 1, Nome = "Adormecer", Dano = 39 },
                 new Habilidade() { Id = 2, Nome = "Congelar", Dano = 41 },
                 new Habilidade() { Id = 3, Nome = "Hipnotizar", Dano = 37 }
@@ -105,6 +107,7 @@ namespace RpgApi.Data
             modelBuilder.Entity<Usuario>()
                 .Property(u => u.Perfil)
                 .HasDefaultValue("Jogador");
+
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

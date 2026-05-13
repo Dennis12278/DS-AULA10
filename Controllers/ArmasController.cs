@@ -66,7 +66,7 @@ namespace RpgApi.Controllers
                     throw new Exception("O Dano da arma não pode ser 0");
 
                 Personagem p = await _context.TB_PERSONAGENS
-                    .FirstOrDefaultAsync(pBusca => pBusca.Id == novaArma.PersonagemId);
+                    .FirstOrDefaultAsync(p => p.Id == novaArma.PersonagemId);
 
                 if (p == null)
                     throw new Exception("Não existe personagem com o Id informado");
@@ -76,9 +76,9 @@ namespace RpgApi.Controllers
 
                 return Ok(novaArma.Id);
             }
-            catch (Exception ex)
+            catch (System.Exception ex)
             {
-                return BadRequest(ex.Message + " - " + ex.InnerException);
+                return BadRequest(ex.Message);
             }
         }
 

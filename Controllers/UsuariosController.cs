@@ -16,7 +16,7 @@ namespace RpgApi.Controllers
     {
         private readonly DataContext _context;
 
-        public UsuariosController(DataContext context)
+        public UsuariosController (DataContext context)
         {
             _context = context;
         }
@@ -69,9 +69,7 @@ namespace RpgApi.Controllers
                 {
                     throw new System.Exception("Usuário não encontrado.");
                 }
-                else if (!Criptografia.VerificarPasswordHash(
-                    credenciais.PassowordString,
-                    usuario.PassworsHash, usuario.PasswordSalt))
+                else if (!Criptografia.VerificarPasswordHash(credenciais.PassowordString, usuario.PassworsHash, usuario.PasswordSalt))
                 {
                     throw new System.Exception("Senha incorreta.");
                 }

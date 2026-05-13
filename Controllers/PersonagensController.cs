@@ -8,14 +8,14 @@ using RpgApi.Data;
 using RpgApi.Models;
 using RpgApi.Controllers;
 
-namespace RpgApi.Controller
+namespace RpgApi.Controllers
 {
     [Route("[controller]")]
     public class PersonagensController : ControllerBase
     {
         private readonly DataContext _context;
 
-        public PersonagensController(DataContext context)
+        public PersonagensController (DataContext context)
         {
             _context = context;
         }
@@ -26,7 +26,10 @@ namespace RpgApi.Controller
             try
             {
                 Personagem p = await _context.TB_PERSONAGENS
-                    .FirstOrDefaultAsync(pBusca => pBusca.Id == id);
+                .Include(ar => ar.Arma)//Carrega a propriedade Arma do objetivo p
+                .Include(ph => ph.PersonagemHabilidades)
+                   .ThenInclude(h => h.Habilidade)//Carrega a lsita de PersonagemHabilidade de p
+             .FirstOrDefaultAsync(pBusca => pBusca.Id == id);
 
                 return Ok(p);
             }

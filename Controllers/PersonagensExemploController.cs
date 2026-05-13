@@ -5,11 +5,11 @@ using Microsoft.AspNetCore.Mvc;
 using RpgApi.Models;
 using RpgApi.Models.Enums;
 
-namespace RpgApi.Controllers
+namespace RpgApi.Controllerss
 {
     [ApiController]
     [Route("[controller]")]
-    public class PersonagensController : ControllerBase
+    public class PersonagensExemploController : ControllerBase
     {
         // Lista de personagens em memória
         private static List<Personagem> personagens = new List<Personagem>()

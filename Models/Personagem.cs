@@ -26,7 +26,6 @@ namespace RpgApi.Models
 
         [JsonIgnore]
         public Arma? Arma { get; set; }
-
         public int Disputas { get; set; }
         public int Vitorias { get; set; }
         public int Derrotas { get; set; }
