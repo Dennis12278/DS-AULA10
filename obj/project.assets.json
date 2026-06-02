@@ -3238,11 +3238,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\2DS\\2) DS\\A12\\RpgApi\\RpgApi.csproj",
+      "projectUniqueName": "D:\\2DS\\2) DS\\A14\\RpgApi\\RpgApi.csproj",
       "projectName": "RpgApi",
-      "projectPath": "D:\\2DS\\2) DS\\A12\\RpgApi\\RpgApi.csproj",
+      "projectPath": "D:\\2DS\\2) DS\\A14\\RpgApi\\RpgApi.csproj",
       "packagesPath": "D:\\NugetPackages",
-      "outputPath": "D:\\2DS\\2) DS\\A12\\RpgApi\\obj\\",
+      "outputPath": "D:\\2DS\\2) DS\\A14\\RpgApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
